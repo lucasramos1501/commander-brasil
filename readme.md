@@ -1,34 +1,38 @@
-# magic-api-consulte
-
-Essa api tem como principal objetivos estudar as funcionalidades do 
-nodejs, para isso foi usando a api https://docs.magicthegathering.io/ 
-para realizar buscas sobre determindadas cartas, que podem ser organizadas 
-em dois formatos: Lista e Coleção.
-Lista, assim como o nome sugere são lista em que podem ser adicionados  
+# magic-commander
+<p>Projeto  voltado para estudar javascript, e suas derivações NodeJs, ReactJs e React Native.
+A ideia e desenvolver um web app voltado para jogadores de <a href="https://pt.wikipedia.org/wiki/Magic:_The_Gathering">Magic: the Gathering</a>, permitinado ao jogador realizar buscas sobre determindadas cartas, que podem ser organizadas em dois formatos: Lista e Coleção. </p>
+<p>Lista, assim como o nome sugere são lista em que podem ser adicionados  
 sem qualquer critério de exclução, enquanto as collections você precisa
 adicionar 99 cartas diferentes e uma carta para o sideboard.
 Cada usuario da api precisara criar uma conta, primeiramente antes de utilizar 
-as funcionalidade.
+as funcionalidade.</p>
 
-## Funções
+## magic-commander-brasil
 
-Cadastrar uma conta
-Editar sua uma conta
-Adicionar foto de perfil
-Consutar carta por nome pt-br ou eng
-Consutar e criar suas coleção
-Consutar coleções de outros jogadores
 
-## Rotas
+## magic-api-consulte
+<p>Essa api tem como principal objetivos estudar as funcionalidades do 
+nodejs, para isso foi usando a api https://docs.magicthegathering.io/.<p>
 
-#### Acessar API
+### Funções
+
+<p>Cadastrar uma conta</p>
+<p>Editar sua uma conta</p>
+<p>Adicionar foto de perfil</p>
+<p>Consutar carta por nome pt-br ou eng</p>
+<p>Consutar e criar suas coleção</p>
+<p>Consutar coleções de outros jogadores</p>
+
+### Rotas
+
+##### Acessar API
 
 ``` http
 POST /login
 GET /logout
 ```
 
-#### Rotas de Usuario
+##### Rotas de Usuario
 
 ``` http
 POST /user/new
@@ -38,14 +42,14 @@ PUT /user/update/:id
 DELETE /user/delete/:id
 ```
 
-### Roda de Upload
+##### Roda de Upload
 
 ``` http
 POST /upload/:id
 
 ```
 
-#### Rotas de Lista de Cartas 
+##### Rotas de Lista de Cartas 
 
 ``` http
 POST /cardlist/new
@@ -55,7 +59,7 @@ PUT /cardlist/update/:id
 DELETE /cardlist/delete/:id
 ```
 
-#### Rotas de Coleções
+##### Rotas de Coleções
 
 ``` http
 POST /collection/new
@@ -65,9 +69,7 @@ PUT /collection/update/:id
 DELETE /collection/delete/:id
 ```
 
-## Códigos de Estado
-
-magic-api-consulte retorna os seguintes códigos: 
+### Códigos de Estado
 
 | Código de Estado| Descrição |
 | :--- | :--- |
@@ -75,15 +77,3 @@ magic-api-consulte retorna os seguintes códigos:
 | 201 | `Requisição bem Sucedida, um novo recurso foi criado` |
 | 401 | `Não autorizado` |
 | 404 | `Não encontrado` |
-
-## Bibioteclas 
-
-[axios](https://github.com/axios/axios)</br>
-[bcrypt](https://github.com/kelektiv/node.bcrypt.js/)</br>
-[body-parser](https://github.com/expressjs/body-parser)</br>
-[express](https://github.com/expressjs/express)</br>
-[jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)</br>
-[mongoose](https://github.com/Automattic/mongoose)</br>
-[multer](https://github.com/expressjs/multer)</br>
-
-
