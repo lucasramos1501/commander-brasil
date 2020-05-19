@@ -1,0 +1,29 @@
+#collection-list-area{
+    overflow: auto;
+    width: 350px;
+    height: 350px;
+    margin: 2px;
+    padding: 2%;
+    background: #fff;
+    color: #00a6ff;
+}
+
+#collection-list-area::-webkit-scrollbar{
+    width: 4px;
+}
+
+#collection-list-area::-webkit-scrollbar-thumb{
+    background: #bfbfbf;
+    border-radius: 20px;
+}
+.collection-list-item{
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.collection-list-item:hover {
+    border-bottom: 1px solid #00a6ff;
+}

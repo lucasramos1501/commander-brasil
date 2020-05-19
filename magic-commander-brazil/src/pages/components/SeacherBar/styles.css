@@ -1,0 +1,16 @@
+#seacherbar-area{
+    width: 70%;
+    margin: auto; 
+}
+
+@media (max-width: 1250px){
+    #seacherbar-area{
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 900px){
+    #seacherbar-area{
+        margin-left: 27%;
+    }
+}
