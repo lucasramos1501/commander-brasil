@@ -10,6 +10,7 @@ import Collection from "./pages/Collection";
 import CardList from "./pages/CardList";
 import NotFound from "./pages/NotFound";
 
+import PrivateRoute from "./components/PrivateRoutes"
 
 export default function Routes() {
     return (
@@ -17,13 +18,13 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact component={Login} />
                 <Route path="/login" component={Login} />
-                <Route path="/createaccount" component={CreateAccount} />
-                <Route path="/home" component={Index} />
-                <Route path="/user" component={User} />
-                <Route path="/exit" component={Login} />
-                <Route path="/upload" component={Upload} />
-                <Route path="/cardlists" component={CardList} />
-                <Route path="/collections" component={Collection} />
+                <PrivateRoute path="/createaccount" component={CreateAccount} />
+                <PrivateRoute path="/home" component={Index} />
+                <PrivateRoute path="/user" component={User} />
+                <PrivateRoute path="/exit" component={Login} />
+                <PrivateRoute path="/upload" component={Upload} />
+                <PrivateRoute path="/cardlists" component={CardList} />
+                <PrivateRoute path="/collections" component={Collection} />
                 <Route path="/" component={NotFound} />
             </Switch>
         </BrowserRouter>

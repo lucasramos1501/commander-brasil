@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import api from "../../services/api";
+import auth from "../../services/auth";
 
 import "./styles.css";
 
@@ -18,8 +19,8 @@ export default function Login() {
             username,
             password,
         }).then(response => {
-            console.log(response.data);
-            history.push('/home', { userLogeded: response.data });
+            auth.login(response.data.token);
+            history.push("/home");
         })
     }
 
