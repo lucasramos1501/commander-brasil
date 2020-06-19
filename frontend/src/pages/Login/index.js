@@ -9,22 +9,23 @@ import "./styles.css";
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
     const history = useHistory();
 
     async function handleSubmit(event) {
         event.preventDefault();
-
         await api.post("/login", {
             username,
             password,
         }).then(response => {
             auth.login(response.data.token);
             history.push("/home");
+        }).catch(error => {
+            alert("Usuário ou Invalidos, tente novamente ou realize o cadastro.");
         })
     }
 
     return (
+
         <div id="from-content">
             <h1>Login Magic Commander Brazil</h1>
             <form id="from-login">

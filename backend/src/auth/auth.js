@@ -9,18 +9,22 @@ export default {
         const { username, password } = request.body;
         const user = await User.findOne({ username }).select("+password");
 
-        if (!user) {
+        if (!user || !password) {
             return response.status(401)
                 .send({ auth: false, msg: "User name incorrect or not exist or password invalid" });
-        }
+        } 
 
-        if (bcrypt.compare(password, user.password)) {
+        await bcrypt.compare(password, user.password).then(async (responseCheck) => {
             user.password = undefined;
-            const token = await tokenJWT.create(user);
-            return response.status(200).json({ auth: true, token: token });
-        }
 
-        return response.status(401).json({ auth: false, msg: "User name incorrect or not exist or password invalid" });
+            if (responseCheck) {
+                const token = await tokenJWT.create(user);
+                return response.status(200).json({ auth: true, token: token });
+            }
+        })
+
+        return response.status(401)
+                .send({ auth: false, msg: "User name incorrect or not exist or password invalid" });
     },
 
     async logout(request, response) {
@@ -37,8 +41,8 @@ export default {
 
             const [, token] = authorization.split(" ");
 
-            if (!token) { 
-                return response.status(401).send({ auth: false, msg: "Token bad formatted" }) 
+            if (!token) {
+                return response.status(401).send({ auth: false, msg: "Token bad formatted" })
             };
 
             const decode = await jwt.verify(token, auth.secret);

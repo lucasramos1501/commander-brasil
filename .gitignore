@@ -1,12 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-magic-api-consulte/node_modules
-magic-commander-brazil/node_modules
+/node_modules
 
 # production
-magic-api-consulte/build
-magic-commander-brazil/build
+/build
 
 # misc
 .DS_Store

@@ -6,10 +6,10 @@ const routes = Router();
 
 const { authenticate } = authController;
 
-routes.post("/user/new", UserController.create);
-routes.get("/user/list", authenticate, UserController.index);
+routes.post("/user", UserController.create);
+routes.get("/user/", authenticate, UserController.index);
 routes.get("/user/:id", authenticate, UserController.show);
-routes.put("/user/update/:id", authenticate, UserController.update);
-routes.delete("/user/delete/:id", authenticate, UserController.destroy);
+routes.put("/user/:id", authenticate, UserController.update);
+routes.delete("/user/:id", authenticate, UserController.destroy);
 
 export default routes;
