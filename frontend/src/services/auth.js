@@ -1,17 +1,17 @@
 export default {
-   login: (token) => {
-        return localStorage.setItem("TOKEN", token);
+    login: (data) => {
+        localStorage.setItem("TOKEN", data.token);
+        localStorage.setItem("AUTH_STATUS", data.auth);
     },
 
     logout: () => {
-        return localStorage.removeItem("TOKEN");
+        localStorage.removeItem("TOKEN");
+        localStorage.removeItem("AUTH_STATUS");
     },
 
-    getToken: () => {
-        return localStorage.getItem("TOKEN");
-    },
+    getToken: () => (localStorage.getItem("TOKEN")),
 
-    isAuth: () =>{
-        return localStorage.getItem('TOKEN') !== null;
-    }
+    isAuth: () => (
+        localStorage.getItem('TOKEN') !== null && localStorage.getItem('AUTH_STATUS') === "true"
+        )
 }

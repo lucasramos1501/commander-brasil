@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     password: {type: String, required: true, select: false},
     email: {type: String, required: true},
     userPhoto: {type: String, default: undefined},
-    collections: [{type: Schema.Types.ObjectId}],   
+    collections: [{type: Schema.Types.ObjectId, ref: "collection"}],   
     userCardList: [{type: Schema.Types.ObjectId}],
     type: {type: String, default: "user", required: true}
 });

@@ -16,7 +16,6 @@ export default {
 
         await bcrypt.compare(password, user.password).then(async (responseCheck) => {
             user.password = undefined;
-
             if (responseCheck) {
                 const token = await tokenJWT.create(user);
                 return response.status(200).json({ auth: true, token: token });
