@@ -10,7 +10,7 @@ export default function Navbar() {
             <nav>
                 <div id="title-area">
                     <Link to="/home">
-                        <h1 id="site-title">Magic Commander Brazil</h1>
+                        <h1 id="site-title">Magic Commander Brasil</h1>
                     </Link>
                 </div>
                 <ul id="menu-ul">

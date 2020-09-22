@@ -1,7 +1,7 @@
 :root{
-    --p-color: #00a6ff;
+    --p-color: #5c00bf;
     --s-color: #00a6ff;
-    --w-color: #fff;
+    --w-color: #ffffff;
     --b-color: #111;
 }
 
@@ -15,7 +15,7 @@
 
 body{
     background: var(--w-color);
-    color: var(--pcls-color);
+    color: var(--b-color);
     width: 100%;
     height: 100%;
     margin: 0;
@@ -42,7 +42,7 @@ button{
     height: 30px;
     border: none;
     border-radius: 5px;
-    background: #00a6ff;
+    background: var(--p-color);
     font-family: monospace;
     color: white;
     font-size: 16px;
@@ -55,5 +55,5 @@ button:hover{
 
 a{
     text-decoration: none;
-    color: #00a6ff;
+    color: var(--p-color);
 }

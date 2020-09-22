@@ -11,9 +11,11 @@ export default function Index() {
     }, [])
     
     return (
+        <>
+        <Navbar/>
         <div id="index-area"> 
-            <Navbar/>
             <SeacherBar/>
         </div>
+        </>
     );
 }

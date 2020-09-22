@@ -40,7 +40,7 @@ export default function CreateAccount() {
     return (
     <div id="login-wapper">
             <div id="from-content">
-            <h1>Login Magic Commander Brazil</h1>
+            <h1>Magic Commander Brasil</h1>
             <form id="form-create-account">
                 <input
                     placeholder="Usuário"

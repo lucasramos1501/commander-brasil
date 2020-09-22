@@ -29,7 +29,7 @@ export default function Login() {
     return (
         <div id="login-wapper">
             <div id="from-content">
-                <h1 id="title-app"> Magic Commander Brazil</h1>
+                <h1 id="title-app"> Magic Commander Brasil</h1>
 
                 <form id="form-login">
                     <input

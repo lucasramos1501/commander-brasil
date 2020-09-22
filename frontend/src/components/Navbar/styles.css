@@ -3,13 +3,17 @@ div #menu-area {
     height: 100%;
     position: fixed;
     top: 0;
-    background:  #00a6ff;
-    color: #00a6ff;
+    background:  var(--p-color);
+    color: var(--w-color);
 }
 
 div #title-area::before {
     content: "space";
-    color: #fff;
+    color: var(--p-color);
+}
+
+#site-title{
+    color: var(--w-color);
 }
 
 #site-title:holver {
@@ -32,6 +36,10 @@ div #title-area::before {
 
 .menu-li:hover {
     border-bottom: 1px solid #00a6ff;
+}
+
+.menu-li a{
+    color: var(--w-color);
 }
 
 @media (max-width: 1250px) {
