@@ -17,7 +17,7 @@ div #title-area::before {
 }
 
 #site-title:holver {
-    border-bottom: 2px solid #00a6ff;
+    border-bottom: 2px solid var(--w-color);
 }
 
 #menu-ul{
@@ -35,7 +35,7 @@ div #title-area::before {
 }
 
 .menu-li:hover {
-    border-bottom: 1px solid #00a6ff;
+    border-bottom: 1px solid var(--w-color);
 }
 
 .menu-li a{

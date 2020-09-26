@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { createContext } from "react";
 
 import Index from "./pages/Index";
 import Login from "./pages/Login";
@@ -11,6 +12,9 @@ import CardList from "./pages/CardList";
 import NotFound from "./pages/NotFound";
 
 import PrivateRoute from "./components/PrivateRoutes"
+
+
+const userContext = createContext({});
 
 export default function Routes() {
     return (

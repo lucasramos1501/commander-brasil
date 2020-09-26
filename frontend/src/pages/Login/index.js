@@ -5,7 +5,7 @@ import api from "../../services/api";
 import auth from "../../services/auth";
 
 import "./styles.css";
-import magic from "../../Assets/magic-the-gathering-jogo.png";
+import magic from "../../assets/magic-the-gathering-jogo.png";
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -14,15 +14,19 @@ export default function Login() {
 
     async function handleSubmit(event) {
         event.preventDefault();
+
         await api.post("/login", {
             username,
             password,
         }).then(response => {
             auth.login(response.data);
+            localStorage.setItem("user", response.data.user);
+
             history.push("/home");
         }).catch(error => {
             alert("Usuário ou/e senha inválidos, tente novamente ou realize o cadastro.");
-            throw error;
+
+            throw new error(error);
         })
     }
 

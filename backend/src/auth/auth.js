@@ -12,18 +12,20 @@ export default {
         if (!user || !password) {
             return response.status(401)
                 .send({ auth: false, msg: "User name incorrect or not exist or password invalid" });
-        } 
+        }
 
         await bcrypt.compare(password, user.password).then(async (responseCheck) => {
             user.password = undefined;
             if (responseCheck) {
                 const token = await tokenJWT.create(user);
-                return response.status(200).json({ auth: true, token: token });
+                return response.status(200).json({ auth: true, token: token, user: user});
             }
+            
+            return response.status(401).send({
+                auth: false, 
+                msg: "User name incorrect or not exist or password invalid" 
+               });
         })
-
-        return response.status(401)
-                .send({ auth: false, msg: "User name incorrect or not exist or password invalid" });
     },
 
     async logout(request, response) {

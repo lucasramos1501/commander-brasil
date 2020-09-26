@@ -5,7 +5,7 @@ import api from "../../services/api";
 import auth from "../../services/auth";
 
 import "./styles.css";
-import magic from "../../Assets/magic-the-gathering-jogo.png";
+import magic from "../../assets/magic-the-gathering-jogo.png";
 
 export default function CreateAccount() {
     const [username, setUsername] = useState("");

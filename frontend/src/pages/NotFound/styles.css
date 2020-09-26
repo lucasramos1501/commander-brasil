@@ -17,5 +17,5 @@
 #not-found-area span{
     margin: 40px;
     font-size: 4em;
-    color: #fff;
+    color: var(--p-color);
 }
